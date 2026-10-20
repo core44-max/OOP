@@ -1,25 +1,22 @@
-# Класс это структура данных, которая служит для описания объектов
 class Person:
-    name: str = "Asan"  # свойство -> атрибут
-    age: int = 25  # свойство -> атрибут
+    addres = "kyrgyzstan" # атрибут класса
+    count = 0 # атрибут класса
+    
+    def setup(self, name, surname):
+        self.name = name # атрибут экземпляра
+        self.surname = surname # атрибут экземпляра
+        Person.count += 1
 
-    def sleep(self):
-        print(f"{self.name} спит")
+    def info(self):
+        print(self.name)
+        print(self.surname)
+        print(self.addres)
+        print(self.count)
+obj_1 = Person()
+obj_2 = Person()
+obj_1.setup(name="Asan", surname="Emilov")
+obj_2.setup("Uson", "Emilov")
+obj_1.info()
+print("#" * 10)
+obj_2.info()
 
-    def run(self):
-        print(f"{self.name} runing")
-
-
-person_1 = Person()  # first object
-print(person_1.name)
-print(person_1.age)
-person_1.sleep()
-
-person_2 = Person()
-person_2.name = "Uson"
-person_2.age = 22
-print(person_2.name)
-print(person_2.age)
-person_2.run()
-print(person_1.name)
-print(person_2.name)
