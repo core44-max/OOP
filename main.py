@@ -1,25 +1,25 @@
-# Класс это структура данных, которая служит для описания объектов
-class Person:
-    name: str = "Asan"  # свойство -> атрибут
-    age: int = 25  # свойство -> атрибут
-
-    def sleep(self):
-        print(f"{self.name} спит")
-
-    def run(self):
-        print(f"{self.name} runing")
+class Vehicle:
+    def vehicle_method(self):
+        print('Это родительский метод из класса Vehicle')
 
 
-person_1 = Person()  # first object
-print(person_1.name)
-print(person_1.age)
-person_1.sleep()
+class Car(Vehicle):
+    def car_method(self):
+        print('Это метод из дочернего класса Car')
 
-person_2 = Person()
-person_2.name = "Uson"
-person_2.age = 22
-print(person_2.name)
-print(person_2.age)
-person_2.run()
-print(person_1.name)
-print(person_2.name)
+
+class Cycle(Vehicle):
+    def cycle_method(self):
+        print("Это метод из дочернего класса Cycle")
+
+
+obj_v = Vehicle()
+obj_v.vehicle_method()
+
+obj_c = Car()
+obj_c.car_method()
+obj_c.vehicle_method()
+
+obj_cc = Cycle()
+obj_cc.cycle_method()
+obj_cc.vehicle_method()
